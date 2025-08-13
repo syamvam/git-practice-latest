@@ -1,2 +1,3 @@
 #!/bin/bash
-date
+DATE=$(date)
+echo "todays data is $DATE"
