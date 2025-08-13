@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "ALL VARIABLES PASSED TO THE SCRIPT $*"
