@@ -9,3 +9,5 @@ echo "directory path $PWD"
 echo "home directory of current user $HOME"
 
 echo "PID of script executing $$"
+
+echo "PID OF last backgground command $!"
