@@ -2,6 +2,14 @@
 USERID=$(id -u)
 echo "UserID is $USERID"
 
+CHECK_ROOT(){
+if [ $USERID -ne 0 ]
+then
+   echo "Please run the script with root privileges"
+   exit 1
+fi
+
+}
 VALIDATE (){
     if [ $1 -ne 0 ]
     then 
@@ -11,11 +19,7 @@ VALIDATE (){
     fi        
 }
 
-if [ $USERID -ne 0 ]
-then
-   echo "Please run the script with root privileges"
-   exit 1
-fi
+CHECK_ROOT
 
 dnf list installed git
 
