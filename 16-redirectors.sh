@@ -14,7 +14,7 @@ G="\e[32m"
 CHECK_ROOT(){
 if [ $USERID -ne 0 ]
 then
-   echo -e "$R Please run the script with root privileges $N" &>>$LOG_FILE
+   echo -e "$R Please run the script with root privileges $N" | tee -a &>>$LOG_FILE
    exit 1
 fi
 
@@ -22,9 +22,9 @@ fi
 VALIDATE (){
     if [ $1 -ne 0 ]
     then 
-        echo -e "$2 is $R Failed $N" &>>$LOG_FILE
+        echo -e "$2 is $R Failed $N" | tee -a &>>$LOG_FILE
     else
-        echo -e "$2 is $G Success $N" &>>$LOG_FILE
+        echo -e "$2 is $G Success $N" | tee -a &>>$LOG_FILE
     fi        
 }
 USAGE(){
