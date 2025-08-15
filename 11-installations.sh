@@ -1,10 +1,16 @@
 #!/bin/bash
-USERID=$(id -u)
-echo "UserID is $USERID"
+# USERID=$(id -u)
+# echo "UserID is $USERID"
 
-if [ $USERID -ne 0 ]
-then
-   echo "Please proceed with install"
-fi
+# if [ $USERID -ne 0 ]
+# then
+#    echo "Please proceed with install"
+# fi
 
-dnf install git -y
+# dnf install git -y
+
+ls -ltr
+
+lssdft -ltr
+
+ls -l
