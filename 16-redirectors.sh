@@ -14,7 +14,7 @@ G="\e[32m"
 CHECK_ROOT(){
 if [ $USERID -ne 0 ]
 then
-   echo "$R Please run the script with root privileges $N" &>>$LOG_FILE
+   echo -e "$R Please run the script with root privileges $N" &>>$LOG_FILE
    exit 1
 fi
 
@@ -27,9 +27,16 @@ VALIDATE (){
         echo -e "$2 is $G Success $N" &>>$LOG_FILE
     fi        
 }
-
+USAGE(){
+    echo -e "$R USAGE:: $N sudo sh 16-redirectors.sh package1 package2 ......"
+}
 CHECK_ROOT
 
+
+if [ $# -eq 0 ]
+then 
+    USAGE
+fi    
 
 for package in $@ # $@ refers to all arguements passed to it
 do
