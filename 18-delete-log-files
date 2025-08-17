@@ -3,9 +3,12 @@ SOURCE_DIR=/home/ec2-user/logs
 
 if [ -d ${SOURCE_DIR} ]
 then 
-    echo "Souce Directory Exists"
+    echo "${SOURCE_DIR} Exists"
 else
-    echo "Source Directory does not exists"
-
+    echo "${SOURCE_DIR} does not exists"
 fi
-    
+
+FILES=(find . name "*.log" -mtime +17)
+echo $FILES
+
+
