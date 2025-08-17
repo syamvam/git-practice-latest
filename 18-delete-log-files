@@ -1,0 +1,11 @@
+#!/bin/bash
+SOURCE_DIR=/home/ec2-user/logs
+
+if [ -d ${SOURCE_DIR} ]
+then 
+    echo "Souce Directory Exists"
+else
+    echo "Source Directory does not exists"
+
+fi
+    
