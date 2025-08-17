@@ -8,7 +8,7 @@ else
     echo "${SOURCE_DIR} does not exists"
 fi
 
-FILES=(find . name "*.log" -mtime +17)
+FILES=$(find . name "*.log" -mtime +17)
 echo $FILES
 
 
