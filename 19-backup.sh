@@ -3,6 +3,7 @@
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
 DAYS=${3:-14}
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
 USAGE(){
     echo -e "USAGE :: sh 19-backup.sg <source> <destination> <days(optional)>"
@@ -29,7 +30,9 @@ echo "Files:$FILES"
 
 if [ ! -z $FILES ]
 then
+    ZIP_FILE="$DESTINATION_DIR/app-logs-$TIMESTAMP.zip"
     echo "files are found"
+    find ${SOURCE_DIR} -name "*.log" -mtime +$DAYS | zip "$ZIP_FILE" -@
 else
     echo "No Files older than $DAYS"
 fi       
