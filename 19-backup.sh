@@ -11,4 +11,24 @@ USAGE(){
 if [ $# -lt 2 ]
 then
     USAGE
-fi    
+fi
+
+if [! -d SOURCE_DIR ]
+then
+    echo "$SOURCE_DIR does not exists please check"
+fi
+
+if [! -d DESTINATION_DIR ]
+then
+    echo "$DESTINATION_DIR does not exists please check"
+fi
+
+FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +14)
+
+if [ -n $FILES ]
+then
+    echo "files are found"
+else
+    echo "No Files older than $DAYS"
+fi       
+    
